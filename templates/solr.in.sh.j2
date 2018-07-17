@@ -54,7 +54,7 @@ SOLR_JAVA_MEM="-Xms256M -Xmx512M"
 #ZK_HOST=""
 
 {% if solr_zookeeper_enabled %}
-ZK_HOST="{{ zookeeper_ip_list }}"
+ZK_HOST="{{ solr_zk_host }}"
 {% endif %}
 
 # Set the ZooKeeper client timeout (for SolrCloud mode)
