@@ -56,3 +56,7 @@
   when: "solr_cores and solr_version.split('.')[0] >= '5'"
 
 - include_tasks: trim-fat.yml
+
+# Configure zookeeper if enabled.
+- include_tasks: configure-zookeeper.yml
+  when: solr_zookeeper_enabled
