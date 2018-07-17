@@ -20,3 +20,12 @@
     - regexp: "^.?SOLR_TIMEZONE="
       line: 'SOLR_TIMEZONE="{{ solr_timezone }}"'
   notify: restart solr
+
+- name: Configure solr.in.sh
+  template:
+    src: templates/solr.in.sh.j2
+    dest: /etc/default/solr.in.sh
+    owner: root
+    group: solr
+    mode: 0640
+  notify: restart solr

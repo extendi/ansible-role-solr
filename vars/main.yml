@@ -1,0 +1,2 @@
+---
+zookeeper_ip_list: "{{ zookeeper_nodes.keys() | join(',') }}"
