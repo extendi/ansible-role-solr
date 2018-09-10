@@ -158,3 +158,6 @@ LOG4J_PROPS="/var/solr/log4j.properties"
 SOLR_LOGS_DIR="/var/solr/logs"
 SOLR_PORT="8983"
 
+{% if java_app_type is defined and java_app_type == 'solr' %}
+SOLR_OPTS="$SOLR_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=3000 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+{% endif %}
