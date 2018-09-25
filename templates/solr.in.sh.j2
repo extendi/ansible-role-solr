@@ -34,6 +34,8 @@
 # Comment out SOLR_HEAP if you are using this though, that takes precedence
 SOLR_JAVA_MEM="-Xms{{ solr_xms }} -Xmx{{ solr_xmx }}"
 
+SOLR_JAVA_STACK_SIZE="-Xss{{ solr_xss }}"
+
 # Enable verbose GC logging...
 #  * If this is unset, various default options will be selected depending on which JVM version is in use
 #  * For Java 8: if this is set, additional params will be added to specify the log file & rotation
