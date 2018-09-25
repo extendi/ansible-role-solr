@@ -23,6 +23,8 @@ solr_xmx: "512M"
 
 solr_xss: "256k"
 
+solr_gc: UseConcMarkSweepGC
+
 solr_timezone: "UTC"
 
 solr_cores:
