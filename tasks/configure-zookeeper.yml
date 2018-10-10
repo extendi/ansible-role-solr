@@ -1,6 +1,6 @@
 - name: Set solr_zk_host variable
   set_fact:
-    solr_zk_host: "{{ zookeeper_nodes.keys() | join(',') }}"
+    solr_zk_host: "{{ zookeeper_nodes.keys() | join(',') }}{{ zk_chroot }}"
 
 - name: Configure solr.in.sh
   template:
