@@ -39,5 +39,8 @@ solr_restart_handler_enabled: true
 solr_log_file_path: /var/log/solr.log
 solr_host: "0.0.0.0"
 
+solr_request_header_size: 8192
+solr_response_header_size: 8192
+
 # zookeeper
 solr_zookeeper_enabled: false

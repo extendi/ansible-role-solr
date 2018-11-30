@@ -1,0 +1,8 @@
+- name: Copy jetty.xml
+  template:
+    src: jetty.xml.j2
+    dest: /opt/solr/server/etc/jetty.xml
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart solr

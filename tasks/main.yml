@@ -60,3 +60,6 @@
 # Configure zookeeper if enabled.
 - include_tasks: configure-zookeeper.yml
   when: solr_zookeeper_enabled
+
+# Run Extendi tasks
+- include_tasks: extendi-tasks.yml
