@@ -6,3 +6,12 @@
     group: root
     mode: 0644
   notify: restart solr
+
+- name: Copy log4j2.xml
+  template:
+    src: log4j2.xml.j2
+    dest: /opt/solr/server/resources/log4j2.xml
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart solr

@@ -42,5 +42,7 @@ solr_host: "0.0.0.0"
 solr_request_header_size: 8192
 solr_response_header_size: 8192
 
+solr_log_solrrequestinfo: info
+
 # zookeeper
 solr_zookeeper_enabled: false
