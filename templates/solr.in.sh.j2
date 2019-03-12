@@ -46,6 +46,9 @@ SOLR_JAVA_STACK_SIZE="-Xss{{ solr_xss }}"
 #GC_LOG_OPTS='-Xlog:gc*'  # (Java 9+)
 #GC_LOG_OPTS="-verbose:gc -XX:+PrintHeapAtGC -XX:+PrintGCDetails \
 #  -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime"
+{% if solr_gc_log_opts is defined %}
+GC_LOG_OPTS="{{ solr_gc_log_opts }}"
+{% endif %}
 
 # These GC settings have shown to work well for a number of common Solr workloads
 #GC_TUNE="-XX:NewRatio=3 -XX:SurvivorRatio=4    etc.
