@@ -46,3 +46,5 @@ solr_log_solrrequestinfo: info
 
 # zookeeper
 solr_zookeeper_enabled: false
+
+solr_autorestart: false

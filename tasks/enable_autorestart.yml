@@ -1,0 +1,21 @@
+- name: Ensure systemd drop-in solr directory exists
+  file:
+    path: /etc/systemd/system/solr.service.d
+    state: directory
+
+- name: Copy systemd drop-in file
+  copy:
+    src: autorestart.conf
+    dest: /etc/systemd/system/solr.service.d/autorestart.conf
+  register: solr_autorestart_result
+
+- name: Systemd daemon-reload
+  systemd:
+    name: solr
+    daemon_reload: yes
+
+- name: Solr restart
+  systemd:
+    name: solr
+    state: restarted
+  when: solr_autorestart_result.changed and solr_restart_handler_enabled

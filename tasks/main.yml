@@ -63,3 +63,9 @@
 
 # Run Extendi tasks
 - include_tasks: extendi-tasks.yml
+
+- include_tasks: enable_autorestart.yml
+  when: "solr_autorestart"
+
+- include_tasks: disable_autorestart.yml
+  when: "not solr_autorestart"
